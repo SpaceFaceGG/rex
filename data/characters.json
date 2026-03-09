@@ -1,0 +1,712 @@
+[
+  {
+    "id": "alph",
+    "name": "Alph",
+    "image": "tiermaker_pngs/alph.png"
+  },
+  {
+    "id": "alucard",
+    "name": "Alucard",
+    "image": "tiermaker_pngs/alucard.png"
+  },
+  {
+    "id": "bandana-dee",
+    "name": "Bandana Dee",
+    "image": "tiermaker_pngs/bandana-dee.png"
+  },
+  {
+    "id": "banjo-kazooie",
+    "name": "Banjo Kazooie",
+    "image": "tiermaker_pngs/banjo-kazooie.png"
+  },
+  {
+    "id": "bayonetta",
+    "name": "Bayonetta",
+    "image": "tiermaker_pngs/bayonetta.png"
+  },
+  {
+    "id": "big-boss",
+    "name": "Big Boss",
+    "image": "tiermaker_pngs/big-boss.png"
+  },
+  {
+    "id": "black-knight",
+    "name": "Black Knight",
+    "image": "tiermaker_pngs/black-knight.png"
+  },
+  {
+    "id": "black-shadow",
+    "name": "Black Shadow",
+    "image": "tiermaker_pngs/black-shadow.png"
+  },
+  {
+    "id": "blaziken",
+    "name": "Blaziken",
+    "image": "tiermaker_pngs/blaziken.png"
+  },
+  {
+    "id": "blood-falcon",
+    "name": "Blood Falcon",
+    "image": "tiermaker_pngs/blood-falcon.png"
+  },
+  {
+    "id": "blue-alloy",
+    "name": "Blue Alloy",
+    "image": "tiermaker_pngs/blue-alloy.png"
+  },
+  {
+    "id": "bomberman",
+    "name": "Bomberman",
+    "image": "tiermaker_pngs/bomberman.png"
+  },
+  {
+    "id": "bowser",
+    "name": "Bowser",
+    "image": "tiermaker_pngs/bowser.png"
+  },
+  {
+    "id": "brawl-meta-knight",
+    "name": "Brawl Meta Knight",
+    "image": "tiermaker_pngs/brawl-meta-knight.png"
+  },
+  {
+    "id": "captain-falcon",
+    "name": "Captain Falcon",
+    "image": "tiermaker_pngs/captain-falcon.png"
+  },
+  {
+    "id": "charizard",
+    "name": "Charizard",
+    "image": "tiermaker_pngs/charizard.png"
+  },
+  {
+    "id": "chrom",
+    "name": "Chrom",
+    "image": "tiermaker_pngs/chrom.png"
+  },
+  {
+    "id": "cloud",
+    "name": "Cloud",
+    "image": "tiermaker_pngs/cloud.png"
+  },
+  {
+    "id": "corrin",
+    "name": "Corrin",
+    "image": "tiermaker_pngs/corrin.png"
+  },
+  {
+    "id": "daisy",
+    "name": "Daisy",
+    "image": "tiermaker_pngs/daisy.png"
+  },
+  {
+    "id": "dark-pit",
+    "name": "Dark Pit",
+    "image": "tiermaker_pngs/dark-pit.png"
+  },
+  {
+    "id": "dark-samus",
+    "name": "Dark Samus",
+    "image": "tiermaker_pngs/dark-samus.png"
+  },
+  {
+    "id": "deathborn",
+    "name": "Deathborn",
+    "image": "tiermaker_pngs/deathborn.png"
+  },
+  {
+    "id": "diddy-kong",
+    "name": "Diddy Kong",
+    "image": "tiermaker_pngs/diddy-kong.png"
+  },
+  {
+    "id": "donkey-kong",
+    "name": "Donkey Kong",
+    "image": "tiermaker_pngs/donkey-kong.png"
+  },
+  {
+    "id": "dr-luigi",
+    "name": "Dr Luigi",
+    "image": "tiermaker_pngs/dr-luigi.png"
+  },
+  {
+    "id": "dr-mario",
+    "name": "Dr Mario",
+    "image": "tiermaker_pngs/dr-mario.png"
+  },
+  {
+    "id": "dragon-king",
+    "name": "Dragon King",
+    "image": "tiermaker_pngs/dragon-king.png"
+  },
+  {
+    "id": "dry-bowser",
+    "name": "Dry Bowser",
+    "image": "tiermaker_pngs/dry-bowser.png"
+  },
+  {
+    "id": "elizabeth",
+    "name": "Elizabeth",
+    "image": "tiermaker_pngs/elizabeth.png"
+  },
+  {
+    "id": "falco",
+    "name": "Falco",
+    "image": "tiermaker_pngs/falco.png"
+  },
+  {
+    "id": "fierce-deity-link",
+    "name": "Fierce Deity Link",
+    "image": "tiermaker_pngs/fierce-deity-link.png"
+  },
+  {
+    "id": "fox",
+    "name": "Fox",
+    "image": "tiermaker_pngs/fox.png"
+  },
+  {
+    "id": "ganondorf",
+    "name": "Ganondorf",
+    "image": "tiermaker_pngs/ganondorf.png"
+  },
+  {
+    "id": "geno",
+    "name": "Geno",
+    "image": "tiermaker_pngs/geno.png"
+  },
+  {
+    "id": "green-alloy",
+    "name": "Green Alloy",
+    "image": "tiermaker_pngs/green-alloy.png"
+  },
+  {
+    "id": "hero",
+    "name": "Hero",
+    "image": "tiermaker_pngs/hero.png"
+  },
+  {
+    "id": "ice-climbers",
+    "name": "Ice Climbers",
+    "image": "tiermaker_pngs/ice-climbers.png"
+  },
+  {
+    "id": "ike",
+    "name": "Ike",
+    "image": "tiermaker_pngs/ike.png"
+  },
+  {
+    "id": "incineroar",
+    "name": "Incineroar",
+    "image": "tiermaker_pngs/incineroar.png"
+  },
+  {
+    "id": "isaac",
+    "name": "Isaac",
+    "image": "tiermaker_pngs/isaac.png"
+  },
+  {
+    "id": "isabelle",
+    "name": "Isabelle",
+    "image": "tiermaker_pngs/isabelle.png"
+  },
+  {
+    "id": "ivysaur",
+    "name": "Ivysaur",
+    "image": "tiermaker_pngs/ivysaur.png"
+  },
+  {
+    "id": "jigglypuff",
+    "name": "Jigglypuff",
+    "image": "tiermaker_pngs/jigglypuff.png"
+  },
+  {
+    "id": "joker",
+    "name": "Joker",
+    "image": "tiermaker_pngs/joker.png"
+  },
+  {
+    "id": "kazuya-mishima",
+    "name": "Kazuya Mishima",
+    "image": "tiermaker_pngs/kazuya-mishima.png"
+  },
+  {
+    "id": "ken",
+    "name": "Ken",
+    "image": "tiermaker_pngs/ken.png"
+  },
+  {
+    "id": "king-dedede",
+    "name": "King Dedede",
+    "image": "tiermaker_pngs/king-dedede.png"
+  },
+  {
+    "id": "king-k-rool",
+    "name": "King K Rool",
+    "image": "tiermaker_pngs/king-k-rool.png"
+  },
+  {
+    "id": "kirby",
+    "name": "Kirby",
+    "image": "tiermaker_pngs/kirby.png"
+  },
+  {
+    "id": "knuckle-joe",
+    "name": "Knuckle Joe",
+    "image": "tiermaker_pngs/knuckle-joe.png"
+  },
+  {
+    "id": "knuckles",
+    "name": "Knuckles",
+    "image": "tiermaker_pngs/knuckles.png"
+  },
+  {
+    "id": "kumatora",
+    "name": "Kumatora",
+    "image": "tiermaker_pngs/kumatora.png"
+  },
+  {
+    "id": "link",
+    "name": "Link",
+    "image": "tiermaker_pngs/link.png"
+  },
+  {
+    "id": "little-mac",
+    "name": "Little Mac",
+    "image": "tiermaker_pngs/little-mac.png"
+  },
+  {
+    "id": "louie",
+    "name": "Louie",
+    "image": "tiermaker_pngs/louie.png"
+  },
+  {
+    "id": "lucario",
+    "name": "Lucario",
+    "image": "tiermaker_pngs/lucario.png"
+  },
+  {
+    "id": "lucas",
+    "name": "Lucas",
+    "image": "tiermaker_pngs/lucas.png"
+  },
+  {
+    "id": "lucina",
+    "name": "Lucina",
+    "image": "tiermaker_pngs/lucina.png"
+  },
+  {
+    "id": "luigi",
+    "name": "Luigi",
+    "image": "tiermaker_pngs/luigi.png"
+  },
+  {
+    "id": "lyn",
+    "name": "Lyn",
+    "image": "tiermaker_pngs/lyn.png"
+  },
+  {
+    "id": "mario",
+    "name": "Mario",
+    "image": "tiermaker_pngs/mario.png"
+  },
+  {
+    "id": "marth",
+    "name": "Marth",
+    "image": "tiermaker_pngs/marth.png"
+  },
+  {
+    "id": "masked-man",
+    "name": "Masked Man",
+    "image": "tiermaker_pngs/masked-man.png"
+  },
+  {
+    "id": "master-chief",
+    "name": "Master Chief",
+    "image": "tiermaker_pngs/master-chief.png"
+  },
+  {
+    "id": "mega-man-x",
+    "name": "Mega Man x",
+    "image": "tiermaker_pngs/mega-man-x.png"
+  },
+  {
+    "id": "meta-knight",
+    "name": "Meta Knight",
+    "image": "tiermaker_pngs/meta-knight.png"
+  },
+  {
+    "id": "metal-face",
+    "name": "Metal Face",
+    "image": "tiermaker_pngs/metal-face.png"
+  },
+  {
+    "id": "metal-sonic",
+    "name": "Metal Sonic",
+    "image": "tiermaker_pngs/metal-sonic.png"
+  },
+  {
+    "id": "mewtwo",
+    "name": "Mewtwo",
+    "image": "tiermaker_pngs/mewtwo.png"
+  },
+  {
+    "id": "mr-game-and-watch",
+    "name": "Mr. Game and Watch",
+    "image": "tiermaker_pngs/mr-game-and-watch.png"
+  },
+  {
+    "id": "mythra",
+    "name": "Mythra",
+    "image": "tiermaker_pngs/mythra.png"
+  },
+  {
+    "id": "navarre",
+    "name": "Navarre",
+    "image": "tiermaker_pngs/navarre.png"
+  },
+  {
+    "id": "ness",
+    "name": "Ness",
+    "image": "tiermaker_pngs/ness.png"
+  },
+  {
+    "id": "ninten",
+    "name": "Ninten",
+    "image": "tiermaker_pngs/ninten.png"
+  },
+  {
+    "id": "nu-13",
+    "name": "Nu-13",
+    "image": "tiermaker_pngs/nu-13.png"
+  },
+  {
+    "id": "olimar",
+    "name": "Olimar",
+    "image": "tiermaker_pngs/olimar.png"
+  },
+  {
+    "id": "pac-man",
+    "name": "Pac Man",
+    "image": "tiermaker_pngs/pac-man.png"
+  },
+  {
+    "id": "palutena",
+    "name": "Palutena",
+    "image": "tiermaker_pngs/palutena.png"
+  },
+  {
+    "id": "peach",
+    "name": "Peach",
+    "image": "tiermaker_pngs/peach.png"
+  },
+  {
+    "id": "phantom-ganon",
+    "name": "Phantom Ganon",
+    "image": "tiermaker_pngs/phantom-ganon.png"
+  },
+  {
+    "id": "pichu",
+    "name": "Pichu",
+    "image": "tiermaker_pngs/pichu.png"
+  },
+  {
+    "id": "pikachu",
+    "name": "Pikachu",
+    "image": "tiermaker_pngs/pikachu.png"
+  },
+  {
+    "id": "pit",
+    "name": "Pit",
+    "image": "tiermaker_pngs/pit.png"
+  },
+  {
+    "id": "primid",
+    "name": "Primid",
+    "image": "tiermaker_pngs/primid.png"
+  },
+  {
+    "id": "pyra",
+    "name": "Pyra",
+    "image": "tiermaker_pngs/pyra.png"
+  },
+  {
+    "id": "red-alloy",
+    "name": "Red Alloy",
+    "image": "tiermaker_pngs/red-alloy.png"
+  },
+  {
+    "id": "richter",
+    "name": "Richter",
+    "image": "tiermaker_pngs/richter.png"
+  },
+  {
+    "id": "ridley",
+    "name": "Ridley",
+    "image": "tiermaker_pngs/ridley.png"
+  },
+  {
+    "id": "rob",
+    "name": "R.O.B.",
+    "image": "tiermaker_pngs/rob.png"
+  },
+  {
+    "id": "robin",
+    "name": "Robin",
+    "image": "tiermaker_pngs/robin.png"
+  },
+  {
+    "id": "rock-howard",
+    "name": "Rock Howard",
+    "image": "tiermaker_pngs/rock-howard.png"
+  },
+  {
+    "id": "roy",
+    "name": "Roy",
+    "image": "tiermaker_pngs/roy.png"
+  },
+  {
+    "id": "ryu",
+    "name": "Ryu",
+    "image": "tiermaker_pngs/ryu.png"
+  },
+  {
+    "id": "samus",
+    "name": "Samus",
+    "image": "tiermaker_pngs/samus.png"
+  },
+  {
+    "id": "sandbag",
+    "name": "Sandbag",
+    "image": "tiermaker_pngs/sandbag.png"
+  },
+  {
+    "id": "sans",
+    "name": "Sans",
+    "image": "tiermaker_pngs/sans.png"
+  },
+  {
+    "id": "sceptile",
+    "name": "Sceptile",
+    "image": "tiermaker_pngs/sceptile.png"
+  },
+  {
+    "id": "sephiroth",
+    "name": "Sephiroth",
+    "image": "tiermaker_pngs/sephiroth.png"
+  },
+  {
+    "id": "shadow",
+    "name": "Shadow",
+    "image": "tiermaker_pngs/shadow.png"
+  },
+  {
+    "id": "sheik",
+    "name": "Sheik",
+    "image": "tiermaker_pngs/sheik.png"
+  },
+  {
+    "id": "shovel-knight",
+    "name": "Shovel Knight",
+    "image": "tiermaker_pngs/shovel-knight.png"
+  },
+  {
+    "id": "shulk",
+    "name": "Shulk",
+    "image": "tiermaker_pngs/shulk.png"
+  },
+  {
+    "id": "silver",
+    "name": "Silver",
+    "image": "tiermaker_pngs/silver.png"
+  },
+  {
+    "id": "simon",
+    "name": "Simon",
+    "image": "tiermaker_pngs/simon.png"
+  },
+  {
+    "id": "snake",
+    "name": "Snake",
+    "image": "tiermaker_pngs/snake.png"
+  },
+  {
+    "id": "sol-badguy",
+    "name": "Sol Badguy",
+    "image": "tiermaker_pngs/sol-badguy.png"
+  },
+  {
+    "id": "sonic",
+    "name": "Sonic",
+    "image": "tiermaker_pngs/sonic.png"
+  },
+  {
+    "id": "sora",
+    "name": "Sora",
+    "image": "tiermaker_pngs/sora.png"
+  },
+  {
+    "id": "squall-leonhart",
+    "name": "Squall Leonhart",
+    "image": "tiermaker_pngs/squall-leonhart.png"
+  },
+  {
+    "id": "squirtle",
+    "name": "Squirtle",
+    "image": "tiermaker_pngs/squirtle.png"
+  },
+  {
+    "id": "sub-zero",
+    "name": "Sub Zero",
+    "image": "tiermaker_pngs/sub-zero.png"
+  },
+  {
+    "id": "suitless-samus",
+    "name": "Suitless Samus",
+    "image": "tiermaker_pngs/suitless-samus.png"
+  },
+  {
+    "id": "sukapon",
+    "name": "Sukapon",
+    "image": "tiermaker_pngs/sukapon.png"
+  },
+  {
+    "id": "sword-ganondorf",
+    "name": "Sword Ganondorf",
+    "image": "tiermaker_pngs/sword-ganondorf.png"
+  },
+  {
+    "id": "tails",
+    "name": "Tails",
+    "image": "tiermaker_pngs/tails.png"
+  },
+  {
+    "id": "terry-bogard",
+    "name": "Terry Bogard",
+    "image": "tiermaker_pngs/terry-bogard.png"
+  },
+  {
+    "id": "toad",
+    "name": "Toad",
+    "image": "tiermaker_pngs/toad.png"
+  },
+  {
+    "id": "toon-link",
+    "name": "Toon Link",
+    "image": "tiermaker_pngs/toon-link.png"
+  },
+  {
+    "id": "toon-zelda",
+    "name": "Toon Zelda",
+    "image": "tiermaker_pngs/toon-zelda.png"
+  },
+  {
+    "id": "ultimate-chrom",
+    "name": "Ultimate Chrom",
+    "image": "tiermaker_pngs/ultimate-chrom.png"
+  },
+  {
+    "id": "ultimate-dark-samus",
+    "name": "Ultimate Dark Samus",
+    "image": "tiermaker_pngs/ultimate-dark-samus.png"
+  },
+  {
+    "id": "ultimate-falco",
+    "name": "Ultimate Falco",
+    "image": "tiermaker_pngs/ultimate-falco.png"
+  },
+  {
+    "id": "ultimate-lucas",
+    "name": "Ultimate Lucas",
+    "image": "tiermaker_pngs/ultimate-lucas.png"
+  },
+  {
+    "id": "ultimate-lucina",
+    "name": "Ultimate Lucina",
+    "image": "tiermaker_pngs/ultimate-lucina.png"
+  },
+  {
+    "id": "ultimate-roy",
+    "name": "Ultimate Roy",
+    "image": "tiermaker_pngs/ultimate-roy.png"
+  },
+  {
+    "id": "ultimate-wolf",
+    "name": "Ultimate Wolf",
+    "image": "tiermaker_pngs/ultimate-wolf.png"
+  },
+  {
+    "id": "ultimate-zero-suit-samus",
+    "name": "Ultimate Zero Suit Samus",
+    "image": "tiermaker_pngs/ultimate-zero-suit-samus.png"
+  },
+  {
+    "id": "vectorman",
+    "name": "Vectorman",
+    "image": "tiermaker_pngs/vectorman.png"
+  },
+  {
+    "id": "waluigi",
+    "name": "Waluigi",
+    "image": "tiermaker_pngs/waluigi.png"
+  },
+  {
+    "id": "wario",
+    "name": "Wario",
+    "image": "tiermaker_pngs/wario.png"
+  },
+  {
+    "id": "wii-fit-trainer",
+    "name": "Wii Fit Trainer",
+    "image": "tiermaker_pngs/wii-fit-trainer.png"
+  },
+  {
+    "id": "wolf",
+    "name": "Wolf",
+    "image": "tiermaker_pngs/wolf.png"
+  },
+  {
+    "id": "yellow-alloy",
+    "name": "Yellow Alloy",
+    "image": "tiermaker_pngs/yellow-alloy.png"
+  },
+  {
+    "id": "yoshi",
+    "name": "Yoshi",
+    "image": "tiermaker_pngs/yoshi.png"
+  },
+  {
+    "id": "young-link",
+    "name": "Young Link",
+    "image": "tiermaker_pngs/young-link.png"
+  },
+  {
+    "id": "yu-narukami",
+    "name": "Yu Narukami",
+    "image": "tiermaker_pngs/yu-narukami.png"
+  },
+  {
+    "id": "zack",
+    "name": "Zack",
+    "image": "tiermaker_pngs/zack.png"
+  },
+  {
+    "id": "zelda",
+    "name": "Zelda",
+    "image": "tiermaker_pngs/zelda.png"
+  },
+  {
+    "id": "zeraora",
+    "name": "Zeraora",
+    "image": "tiermaker_pngs/zeraora.png"
+  },
+  {
+    "id": "zero-suit-samus",
+    "name": "Zero Suit Samus",
+    "image": "tiermaker_pngs/zero-suit-samus.png"
+  },
+  {
+    "id": "zero",
+    "name": "Zero",
+    "image": "tiermaker_pngs/zero.png"
+  }
+]

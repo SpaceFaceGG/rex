@@ -1,0 +1,8 @@
+{
+  "poll_open": "2026-03-10T00:00:00Z",
+  "poll_close": "2026-03-17T00:00:00Z",
+  "show_live_results": false,
+  "max_votes_per_pair_per_worker": 1,
+  "site_version": "1.0.0",
+  "api_base": "https://REPLACE_ME.workers.dev"
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REX Crowd-BT Voting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="panel">
+      <div class="top-row">
+        <label class="toggle-wrap" for="include-pplus">
+          <input id="include-pplus" type="checkbox" checked>
+          <span>Load P+ characters</span>
+        </label>
+        <div id="pool-info" class="pool-info">Pool: -- characters</div>
+      </div>
+
+      <h1 class="prompt">Who is the better character on a tier list?</h1>
+
+      <div class="cards">
+        <article class="card">
+          <h2 id="left-name" class="char-name">Loading...</h2>
+          <img id="left-image" class="char-image" alt="Left character" loading="eager">
+          <button id="left-vote" class="vote-btn" type="button" disabled>Vote</button>
+        </article>
+
+        <article class="card">
+          <h2 id="right-name" class="char-name">Loading...</h2>
+          <img id="right-image" class="char-image" alt="Right character" loading="eager">
+          <button id="right-vote" class="vote-btn" type="button" disabled>Vote</button>
+        </article>
+      </div>
+
+      <button id="skip-vote" class="skip-btn" type="button" disabled>Skip this vote</button>
+
+      <p id="status" class="status">Loading characters...</p>
+      <p id="queue-status" class="queue-status">Sent: 0 | Skipped: 0</p>
+    </section>
+  </main>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
