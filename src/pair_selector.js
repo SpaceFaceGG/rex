@@ -19,6 +19,101 @@ function uncertaintyValue(item) {
   return item.uncertainty ?? 1;
 }
 
+function chooseCalibrationPair(enriched, seenPairs, pairCountsByKey) {
+  if (enriched.length < 2) return null;
+
+  const certain = [...enriched]
+    .sort((a, b) => uncertaintyValue(a) - uncertaintyValue(b))
+    .slice(0, Math.max(10, Math.floor(enriched.length * 0.45)));
+  const byScore = [...certain].sort((a, b) => (a.score ?? 0) - (b.score ?? 0));
+  const edge = Math.max(4, Math.floor(byScore.length * 0.25));
+  const low = byScore.slice(0, edge);
+  const high = byScore.slice(-edge);
+
+  let best = null;
+  let bestUtility = -Infinity;
+  for (const a of low) {
+    for (const b of high) {
+      if (a.id === b.id) continue;
+      const key = pairKey(a.id, b.id);
+      if (seenPairs.has(key)) continue;
+
+      const gap = scoreGap(a, b);
+      const pairCount = pairCountsByKey.get(key) ?? 0;
+      const sparse = 1 / Math.sqrt(pairCount + 1);
+      const certainty = 1 / (1 + uncertaintyValue(a) + uncertaintyValue(b));
+      const utility = (1.7 * gap) + (0.8 * certainty) + (0.6 * sparse);
+
+      if (utility > bestUtility) {
+        bestUtility = utility;
+        best = [a, b];
+      }
+    }
+  }
+
+  return best;
+}
+
+function chooseInformationPair(enriched, seenPairs, pairCountsByKey) {
+  const sorted = [...enriched].sort((x, y) => uncertaintyValue(y) - uncertaintyValue(x));
+  const top = sorted.slice(0, Math.max(8, Math.floor(sorted.length * 0.3)));
+
+  let best = null;
+  let bestUtility = -Infinity;
+  for (let i = 0; i < top.length; i += 1) {
+    for (let j = i + 1; j < top.length; j += 1) {
+      const a = top[i];
+      const b = top[j];
+      const key = pairKey(a.id, b.id);
+      if (seenPairs.has(key)) continue;
+
+      const u = uncertaintyValue(a) + uncertaintyValue(b);
+      const gap = scoreGap(a, b);
+      const closeScore = 1 / (1 + gap);
+      const pairCount = pairCountsByKey.get(key) ?? 0;
+      const sparseBonus = 1 / Math.sqrt(pairCount + 1);
+      const utility = (1.4 * u) + (1.1 * closeScore) + sparseBonus;
+
+      if (utility > bestUtility) {
+        bestUtility = utility;
+        best = [a, b];
+      }
+    }
+  }
+
+  return best;
+}
+
+function chooseExplorationPair(enriched, seenPairs, pairCountsByKey) {
+  if (enriched.length < 2) return null;
+
+  let best = null;
+  let bestUtility = -Infinity;
+  const targetGap = 1.2;
+
+  for (let i = 0; i < enriched.length; i += 1) {
+    for (let j = i + 1; j < enriched.length; j += 1) {
+      const a = enriched[i];
+      const b = enriched[j];
+      const key = pairKey(a.id, b.id);
+      if (seenPairs.has(key)) continue;
+
+      const pairCount = pairCountsByKey.get(key) ?? 0;
+      const novelty = 1 / Math.sqrt(pairCount + 1);
+      const gap = scoreGap(a, b);
+      const gapBand = 1 / (1 + Math.abs(gap - targetGap));
+      const utility = (1.5 * novelty) + (0.8 * gapBand) + (0.25 * Math.random());
+
+      if (utility > bestUtility) {
+        bestUtility = utility;
+        best = [a, b];
+      }
+    }
+  }
+
+  return best;
+}
+
 export function buildExposureMap(votes, characterIds) {
   const map = new Map(characterIds.map((id) => [id, 0]));
   for (const v of votes) {
@@ -67,48 +162,23 @@ export function chooseNextPair({
     if (b) return [a, b];
   }
 
-  // Stage 2: uncertainty-driven with exploration.
+  // Stage 2: 10% calibration, 80% information/uncertainty, 10% exploration.
   const roll = Math.random();
+  const primary =
+    roll < 0.10
+      ? chooseCalibrationPair(enriched, seenPairs, pairCountsByKey)
+      : roll < 0.90
+        ? chooseInformationPair(enriched, seenPairs, pairCountsByKey)
+        : chooseExplorationPair(enriched, seenPairs, pairCountsByKey);
 
-  // 20% exploration.
-  if (roll < 0.2) {
-    for (let tries = 0; tries < 30; tries += 1) {
-      const a = sampleOne(enriched);
-      const b = sampleOne(enriched);
-      if (!a || !b || a.id === b.id) continue;
-      if (seenPairs.has(pairKey(a.id, b.id))) continue;
-      return [a, b];
-    }
-  }
+  if (primary) return primary;
 
-  // 80% exploit uncertainty among close-score neighbors with low pair-count preference.
-  const sorted = [...enriched].sort((x, y) => uncertaintyValue(y) - uncertaintyValue(x));
-  const top = sorted.slice(0, Math.max(8, Math.floor(sorted.length * 0.3)));
+  const fallback =
+    chooseInformationPair(enriched, seenPairs, pairCountsByKey) ||
+    chooseExplorationPair(enriched, seenPairs, pairCountsByKey) ||
+    chooseCalibrationPair(enriched, seenPairs, pairCountsByKey);
 
-  let best = null;
-  let bestUtility = -Infinity;
-  for (let i = 0; i < top.length; i += 1) {
-    for (let j = i + 1; j < top.length; j += 1) {
-      const a = top[i];
-      const b = top[j];
-      const key = pairKey(a.id, b.id);
-      if (seenPairs.has(key)) continue;
-
-      const u = uncertaintyValue(a) + uncertaintyValue(b);
-      const gap = scoreGap(a, b);
-      const closeScore = 1 / (1 + gap);
-      const pairCount = pairCountsByKey.get(key) ?? 0;
-      const sparseBonus = 1 / Math.sqrt(pairCount + 1);
-      const utility = (1.4 * u) + (1.1 * closeScore) + sparseBonus;
-
-      if (utility > bestUtility) {
-        bestUtility = utility;
-        best = [a, b];
-      }
-    }
-  }
-
-  if (best) return best;
+  if (fallback) return fallback;
 
   // Final fallback.
   const a = sampleOne(enriched);
