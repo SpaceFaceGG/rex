@@ -154,6 +154,14 @@ body {
   font-size: 0.95rem;
 }
 
+.live-feedback {
+  margin: 8px 0 0;
+  text-align: center;
+  color: #294258;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 @media (max-width: 860px) {
   .cards {
     grid-template-columns: 1fr;

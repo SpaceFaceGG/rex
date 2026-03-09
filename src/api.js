@@ -95,3 +95,37 @@ export async function submitQueuedVote(vote, apiBase) {
   const result = await submitVote(vote, { apiBase });
   return result.ok;
 }
+
+export async function fetchLiveStats(apiBase, { includePPlus = true, signal } = {}) {
+  if (!apiBase) return { ok: false, status: 0 };
+
+  const base = apiBase.replace(/\/$/, "");
+  const url = `${base}/stats?include_pplus=${includePPlus ? 1 : 0}`;
+  const res = await fetch(url, { method: "GET", signal });
+  if (!res.ok) {
+    return { ok: false, status: res.status };
+  }
+  const data = await res.json();
+  return { ok: true, status: res.status, data };
+}
+
+export async function requestNextPair(apiBase, payload, { signal } = {}) {
+  if (!apiBase) return { ok: false, status: 0 };
+
+  const base = apiBase.replace(/\/$/, "");
+  const res = await fetch(`${base}/next-pair`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(payload),
+    signal,
+  });
+
+  if (!res.ok) {
+    return { ok: false, status: res.status };
+  }
+
+  const data = await res.json();
+  return { ok: true, status: res.status, data };
+}

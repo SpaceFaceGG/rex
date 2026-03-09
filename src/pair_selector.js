@@ -32,6 +32,7 @@ export function chooseNextPair({
   characters,
   scoresById = {},
   exposureById = new Map(),
+  pairCountsByKey = new Map(),
   seenPairs = new Set(),
   coverageTarget = 20,
 }) {
@@ -49,7 +50,19 @@ export function chooseNextPair({
   // Stage 1: coverage-first
   if (underexposed.length > 0) {
     const a = sampleOne(underexposed);
-    const candidates = enriched.filter((c) => c.id !== a.id && !seenPairs.has(pairKey(a.id, c.id)));
+    // Prefer an opponent from a different exposure bucket.
+    const low = enriched.filter((c) => c.exposure < coverageTarget);
+    const mid = enriched.filter((c) => c.exposure >= coverageTarget && c.exposure < coverageTarget * 2);
+    const high = enriched.filter((c) => c.exposure >= coverageTarget * 2);
+
+    let bucket = high;
+    if (a.exposure >= coverageTarget * 2) bucket = low;
+    else if (a.exposure >= coverageTarget) bucket = Math.random() < 0.5 ? low : high;
+
+    let candidates = bucket.filter((c) => c.id !== a.id && !seenPairs.has(pairKey(a.id, c.id)));
+    if (candidates.length === 0) {
+      candidates = enriched.filter((c) => c.id !== a.id && !seenPairs.has(pairKey(a.id, c.id)));
+    }
     const b = sampleOne(candidates);
     if (b) return [a, b];
   }
@@ -68,7 +81,7 @@ export function chooseNextPair({
     }
   }
 
-  // 80% exploit uncertainty among close-score neighbors.
+  // 80% exploit uncertainty among close-score neighbors with low pair-count preference.
   const sorted = [...enriched].sort((x, y) => uncertaintyValue(y) - uncertaintyValue(x));
   const top = sorted.slice(0, Math.max(8, Math.floor(sorted.length * 0.3)));
 
@@ -78,11 +91,15 @@ export function chooseNextPair({
     for (let j = i + 1; j < top.length; j += 1) {
       const a = top[i];
       const b = top[j];
-      if (seenPairs.has(pairKey(a.id, b.id))) continue;
+      const key = pairKey(a.id, b.id);
+      if (seenPairs.has(key)) continue;
 
       const u = uncertaintyValue(a) + uncertaintyValue(b);
       const gap = scoreGap(a, b);
-      const utility = u - gap; // favor uncertain + close pairs
+      const closeScore = 1 / (1 + gap);
+      const pairCount = pairCountsByKey.get(key) ?? 0;
+      const sparseBonus = 1 / Math.sqrt(pairCount + 1);
+      const utility = (1.4 * u) + (1.1 * closeScore) + sparseBonus;
 
       if (utility > bestUtility) {
         bestUtility = utility;
