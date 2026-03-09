@@ -114,6 +114,21 @@ function chooseExplorationPair(enriched, seenPairs, pairCountsByKey) {
   return best;
 }
 
+function getActiveMix(enriched, coverageTarget) {
+  const avgExposure = enriched.length
+    ? enriched.reduce((sum, c) => sum + (c.exposure ?? 0), 0) / enriched.length
+    : 0;
+  const progress = Math.max(0, Math.min(1, (avgExposure - coverageTarget) / (coverageTarget * 2)));
+
+  if (progress < 0.33) {
+    return { calibration: 0.10, information: 0.75, exploration: 0.15 };
+  }
+  if (progress < 0.66) {
+    return { calibration: 0.10, information: 0.80, exploration: 0.10 };
+  }
+  return { calibration: 0.05, information: 0.90, exploration: 0.05 };
+}
+
 export function buildExposureMap(votes, characterIds) {
   const map = new Map(characterIds.map((id) => [id, 0]));
   for (const v of votes) {
@@ -162,12 +177,15 @@ export function chooseNextPair({
     if (b) return [a, b];
   }
 
-  // Stage 2: 10% calibration, 80% information/uncertainty, 10% exploration.
+  // Stage 2: adaptive mix
+  const mix = getActiveMix(enriched, coverageTarget);
+  const calibrationCut = mix.calibration;
+  const informationCut = mix.calibration + mix.information;
   const roll = Math.random();
   const primary =
-    roll < 0.10
+    roll < calibrationCut
       ? chooseCalibrationPair(enriched, seenPairs, pairCountsByKey)
-      : roll < 0.90
+      : roll < informationCut
         ? chooseInformationPair(enriched, seenPairs, pairCountsByKey)
         : chooseExplorationPair(enriched, seenPairs, pairCountsByKey);
 
